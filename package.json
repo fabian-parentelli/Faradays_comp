@@ -1,0 +1,14 @@
+{
+    "name": "faradays_comp",
+    "version": "2.0.2",
+    "description": "",
+    "main": "index.jsx",
+    "types": "index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "Fabián Parentelli",
+    "license": "ISC"
+}
