@@ -1,5 +1,5 @@
 import './autocomplete.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export const AutoComplete = ({ options = [], labelKey = 'label', setData, style = {} }) => {
 
@@ -7,6 +7,8 @@ export const AutoComplete = ({ options = [], labelKey = 'label', setData, style 
     const [filteredOptions, setFilteredOptions] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
+    
+    const optionRefs = useRef([]);
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -30,16 +32,34 @@ export const AutoComplete = ({ options = [], labelKey = 'label', setData, style 
 
     const handleKeyDown = (e) => {
         if (e.key === 'ArrowDown') {
-            if (highlightedIndex < filteredOptions.length - 1) setHighlightedIndex(highlightedIndex + 1);
+            if (highlightedIndex < filteredOptions.length - 1) {
+                setHighlightedIndex((prevIndex) => {
+                    const nextIndex = prevIndex + 1;
+                    optionRefs.current[nextIndex]?.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                    });
+                    return nextIndex;
+                });
+            }
         } else if (e.key === 'ArrowUp') {
-            if (highlightedIndex > 0) setHighlightedIndex(highlightedIndex - 1);
+            if (highlightedIndex > 0) {
+                setHighlightedIndex((prevIndex) => {
+                    const prevIndexUpdated = prevIndex - 1;
+                    optionRefs.current[prevIndexUpdated]?.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                    });
+                    return prevIndexUpdated;
+                });
+            }
         } else if (e.key === 'Enter' && highlightedIndex !== -1) {
             handleSelect(filteredOptions[highlightedIndex]);
         } else if (e.key === 'Escape') setIsOpen(false);
     };
 
     const handleBlur = () => setTimeout(() => setIsOpen(false), 100);
-    
+
     const handleClear = () => {
         setInputValue('');
         setFilteredOptions([]);
@@ -48,7 +68,7 @@ export const AutoComplete = ({ options = [], labelKey = 'label', setData, style 
     };
 
     const getOptionClass = (index) => index === highlightedIndex ? 'highlighted' : '';
-    
+
     useEffect(() => {
         if (!isOpen) setHighlightedIndex(-1); 
     }, [isOpen]);
@@ -76,6 +96,7 @@ export const AutoComplete = ({ options = [], labelKey = 'label', setData, style 
                     {filteredOptions.map((option, index) => (
                         <li
                             key={index}
+                            ref={(el) => optionRefs.current[index] = el}
                             onClick={() => handleSelect(option)}
                             className={`autocomplete-item ${getOptionClass(index)}`}
                         >
@@ -83,9 +104,6 @@ export const AutoComplete = ({ options = [], labelKey = 'label', setData, style 
                         </li>
                     ))}
                 </ul>
-            )}
-            {isOpen && filteredOptions.length === 0 && (
-                <div className="no-results">No hay resultados</div>
             )}
         </div>
     );

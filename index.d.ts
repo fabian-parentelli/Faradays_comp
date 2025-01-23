@@ -1,5 +1,5 @@
 declare module 'faradays_comp' {
-    
+
     // Propiedades para los Iconos
     export interface IconProps {
         color?: string;
@@ -30,8 +30,8 @@ declare module 'faradays_comp' {
         open?: boolean;
         color?: string;
     }
-    
-    // // Propiedades para Autocomplete
+
+    // Propiedades para Autocomplete
     export interface AutoCompleteProps {
         options?: any[];
         labelKey?: string;
@@ -40,6 +40,27 @@ declare module 'faradays_comp' {
             height?: string;
             width?: string;
             placeholder?: string;
+        };
+    }
+
+    // Propiedades para ScrollToTop
+    export interface ScrollToTopProps {
+        children: React.ReactNode;
+    }
+
+    // Propiedades para TextAreaExpand
+    export interface TextAreaExpandProps {
+        placeholder?: string;
+        value: string;
+        handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+        name?: string;
+        required?: boolean;
+        style?: {
+            width?: string;
+            border?: string;
+            borderRadius?: string;
+            color?: string;
+            backgroundColor?: string;
         };
     }
 
@@ -63,4 +84,8 @@ declare module 'faradays_comp' {
     export const Loader: React.FC<LoaderProps>;
 
     export const AutoComplete: React.FC<AutoCompleteProps>;
+
+    export const ScrollToTop: React.FC<ScrollToTopProps>;
+
+    export const TextAreaExpand: React.FC<TextAreaExpandProps>;
 }

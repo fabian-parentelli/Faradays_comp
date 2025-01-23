@@ -1,0 +1,7 @@
+.textAreaExpand {
+    border: none;
+    height: 100%;
+    overflow: hidden;
+    resize: none;
+    padding: 6px;
+}

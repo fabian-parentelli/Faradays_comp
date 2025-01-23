@@ -14,6 +14,13 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: .3s ease-in-out;
+    outline: 1px solid transparent;
+}
+
+.autocomplete input:focus {
+    border: 1px solid #2990c8;
+    outline: 1px solid #2990c8;
 }
 
 .clear-icon {
@@ -23,12 +30,12 @@
     transform: translateY(-50%);
     font-size: 18px;
     cursor: pointer;
-    color: #aaa;
+    color: #5183ce;
     transition: color 0.3s;
 }
 
 .clear-icon:hover {
-    color: #777;
+    color: #2164c9;
 }
 
 .autocomplete-list {

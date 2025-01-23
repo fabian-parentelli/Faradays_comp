@@ -1,8 +1,10 @@
 # Faradays Components
 
-**Versión:** 0.0.0
+**Versión:** 2.0.3
 
 ## Spinner
+
+**Versión:** 0.0.0
 
 El componente `Spinner` es un elemento visual que muestra al usuario que una operación está en progreso y que debe esperar mientras se carga contenido o se completa una acción en segundo plano.
 
@@ -59,6 +61,10 @@ export default app;
 - **`size`** (number): Define el tamaño del ícono en píxeles. El valor debe ser una cadena de texto que contenga el tamaño seguido de las unidades, como "50px" o "2rem".
 
 - **`onClick`** (function): Define la función a ejecutar cuando se haga clic en el ícono.
+
+- **`backCol`** (string): Algunos iconos tiene color de background, pero no todos.
+
+- **`bold`** (number): permitiendo ajustar el grosor de los trazos o contornos del vector.
 
     * IconCheck. 
     * IconCross.
@@ -155,7 +161,7 @@ export default app;
 
 ## AutoComplete
 
-**Versión:** 0.0.0
+**Versión:** 0.0.1
 
 
 El componente `AutoComplete` es un componente de interfaz de usuario que permite a los usuarios buscar y seleccionar opciones de una lista filtrada mientras escriben en un campo de entrada (input).
@@ -184,7 +190,7 @@ const app = () => {
                 setData={setData} 
                 style={{
                     width: '300px',
-                    height: '50px'
+                    height: '50px',
                     placeholder: 'Buscar info...'
                 }} 
             />
@@ -210,3 +216,109 @@ export default app;
     * **`height`** Define la altura del campo de entrada. Se establece en '50px', por lo que el campo de entrada tendrá una altura de 50 píxeles.
     
     * **`placeholder`** Es un atributo que proporciona un texto de ejemplo o sugerencia dentro del campo cuando está vacío.
+
+
+
+    ---
+
+
+
+## ScrollToTop
+
+**Versión:** 0.0.0
+
+
+El componente `ScrollToTop` escucha los cambios de ubicación en la navegación (mediante popstate, pushState y replaceState) y automáticamente desplaza la página hacia la parte superior cada vez que se cambia de ruta.
+
+```jsx
+import { ScrollToTop } from 'faradays_comp';
+
+const app = () => {
+
+    return (
+        <div className='App'>
+            <ScrollToTop>
+
+                <RoutesComp /> 
+                 {/* Escucha los cambios de este componente que maneja las rutas de mi app. */}
+
+            </ScrollToTop>
+        </div>
+    );
+};
+
+export default app;
+```
+
+#### Children:
+
+- **`children`** (children): El componente ScrollToTop debe ser el contenedor principal de tu aplicación que maneja todas las rutas. Esto permite que se escuchen todos los cambios de ruta, y al cambiar de página, automáticamente realiza un desplazamiento hacia la parte superior de la aplicación.
+
+
+
+    ---
+
+
+
+## TextAreaExpand
+
+**Versión:** 0.0.0
+
+
+El componente `TextAreaExpand` es un campo de texto expandible que permite personalizar su apariencia y comportamiento. Recibe props como el placeholder, value, handleChange, name, required y style para ajustarse a las necesidades del usuario. La función handleChange se encarga de gestionar los cambios en el valor del textarea, permitiendo que se actualice su contenido de forma controlada.
+
+```jsx
+import { TextAreaExpand } from 'faradays_comp';
+import { useState } from 'react';
+
+const app = () => {
+
+    const [values, setValues] = useState({ message: lorem });
+
+    const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
+
+    return (
+        <div className='body'>
+            <h2>Body</h2>
+
+            <TextAreaExpand
+                placeholder={'Este es el placeholder'}
+                value={values.message} // Obligatorio
+                handleChange={handleChange} // Obligatorio
+                name='message' // Obligatorio
+                required={true}
+                style={{
+                    width: '300px',
+                    border: '1px solid red',
+                    borderRadius: '6px',
+                    color: 'orange',
+                    backgroundColor: 'green'
+                }}
+            />
+
+        </div>
+    );
+};
+
+export default app;
+```
+
+#### props:
+
+- **`placeholder`** (string): Es el texto que aparece en el campo de texto cuando está vacío, proporcionando una pista sobre el tipo de información que se debe ingresar. Es opcional y su valor predeterminado es 'Completa este campo' si no se especifica.
+
+- **`value`** (string): Es el valor actual del campo de texto. Este prop es obligatorio, ya que se usa para manejar el valor de entrada y actualizarlo en el estado del componente principal. Permite que el campo de texto sea controlado.
+
+- **`handleChange`** (función): Es una función que se llama cada vez que el usuario modifica el contenido del textarea. Esta función debe manejar el cambio en el valor del campo y actualizar el estado en el componente padre, permitiendo que el componente se mantenga sincronizado con el valor que se introduce.
+
+- **`name`** (string): Es el nombre del campo, que se usa para identificarlo en formularios o en el estado del componente. Es opcional y su valor predeterminado es 'message' si no se especifica.
+
+- **`required`** (boolean): Define si el campo es obligatorio o no. Si se establece como true, el formulario no podrá enviarse sin que se haya completado este campo.
+
+- **`style`** (CSSProperties): Es un (`"objeto"`) de estilos CSS en línea que se aplica al textarea. Este prop es opcional y permite personalizar el estilo del componente, como el ancho, el color de fondo o el borde.
+
+    * width
+    * border
+    * borderRadius
+    * color
+    * backgroundColor

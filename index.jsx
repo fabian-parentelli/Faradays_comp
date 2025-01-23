@@ -3,6 +3,8 @@ export { Spinner } from './components/Spinner/Spinner';
 export { Snackbar } from './components/SnackBar/SnackBar';
 export { Loader } from './components/Loader/Loader';
 export { AutoComplete } from './components/AutoComplete/AutoComplete';
+export { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
+export { TextAreaExpand } from './components/TextAreaExpand/TextAreaExpand';
 
 // Iconos.
 export { IconCheck } from './icons/IconCheck';
