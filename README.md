@@ -1,6 +1,6 @@
 # Faradays Components
 
-**Versión:** 2.0.3
+**Versión:** 2.0.5
 
 ## Spinner
 
@@ -35,7 +35,7 @@ export default app;
 
 ## Icons
 
-**Versión:** 0.0.0
+**Versión:** 0.0.2
 
 
 El componente `Icon....` muestra un ícono que se puede personalizar en color, tamaño y agregar una acción al hacer clic.
@@ -46,7 +46,13 @@ import IconCheck from "./icons/IconCheck";
 const app = () => {
     return (
         <div>
-            <IconCheck color="black" size="50px" onClick={()=> console.log('hace click')}/>;
+            <IconCheck 
+                color="black" 
+                size="50px" 
+                onClick={()=> console.log('hace click')}
+                backCol='green'
+                bold={1}
+            />;
         </div>
     );
 };
@@ -76,6 +82,13 @@ export default app;
     * IconBag
     * IconMessage
     * IconBell
+    * IconBook
+    * IconCode
+    * IconIcons
+    * IconNews
+    * IconUser
+    * IconUsers
+    * IconApp
 
 
 

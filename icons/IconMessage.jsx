@@ -9,9 +9,9 @@ const IconMessage = ({ color = '#000', size = '100px', onClick, backCol = 'none'
             style={{ fill: backCol }}
             onClick={onClick}
             stroke={color}
-            stroke-width={bold}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={bold}
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M8 9h8" />
             <path d="M8 13h6" />

@@ -8,9 +8,9 @@ const IconInfo = ({ color = '#000', size = '100px', onClick, backCol = 'none', b
             style={{ fill: backCol }}
             onClick={onClick}
             stroke={color}
-            stroke-width={bold}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={bold}
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M12 9h.01" />
             <path d="M11 12h1v4h1" />

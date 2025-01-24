@@ -9,9 +9,9 @@ const IconNetworks = ({ color = '#000', size = '100px', onClick, backCol = 'none
             style={{ fill: backCol }}
             onClick={onClick}
             stroke={color}
-            stroke-width={bold}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={bold}
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M14 6a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />
             <path d="M7 18a2 2 0 1 0 -4 0a2 2 0 0 0 4 0z" />

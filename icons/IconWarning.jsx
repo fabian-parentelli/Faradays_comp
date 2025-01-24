@@ -7,11 +7,11 @@ const IconWarning = ({ color = '#000', size = '100px', onClick, backCol = 'none'
             width={size}
             height={size}
             style={{ fill: backCol }}
+            onClick={onClick}
             stroke={color}
             strokeWidth={bold}
             strokeLinecap="round"
             strokeLinejoin="round"
-            onClick={onClick}
         >
             <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
             <path d="M12 8v4" />

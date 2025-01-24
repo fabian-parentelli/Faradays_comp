@@ -8,9 +8,9 @@ const IconMenu = ({ color = '#000', size = '100px', onClick, backCol = 'none', b
             style={{ fill: backCol }}
             onClick={onClick}
             stroke={color}
-            stroke-width={bold}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={bold}
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M4 6l16 0" />
             <path d="M4 12l16 0" />

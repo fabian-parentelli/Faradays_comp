@@ -8,9 +8,9 @@ const IconHome = ({ color = '#000', size = '100px', onClick, backCol = 'none', b
             style={{ fill: backCol }}
             onClick={onClick}
             stroke={color}
-            stroke-width={bold}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={bold}
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
             <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
