@@ -35,7 +35,7 @@ export default app;
 
 ## Icons
 
-**Versión:** 0.0.2
+**Versión:** 0.0.3
 
 
 El componente `Icon....` muestra un ícono que se puede personalizar en color, tamaño y agregar una acción al hacer clic.
@@ -78,7 +78,7 @@ export default app;
     * IconInfo.
     * IconMenu.
     * IconHome
-    * IconNetwork
+    * IconNetworks
     * IconBag
     * IconMessage
     * IconBell
@@ -89,6 +89,13 @@ export default app;
     * IconUser
     * IconUsers
     * IconApp
+    * IconCopy
+    * IconDots
+    * IconCalendar
+    * IconClipBoard
+    * IconClock
+    * IconCreditCard
+    * IconMap
 
 
 

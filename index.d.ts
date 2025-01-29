@@ -82,6 +82,13 @@ declare module 'faradays_comp' {
     export const IconUsers: React.FC<IconProps>;
     export const IconUser: React.FC<IconProps>;
     export const IconNews: React.FC<IconProps>;
+    export const IconCopy: React.FC<IconProps>;
+    export const IconDots: React.FC<IconProps>;
+    export const IconCalendar: React.FC<IconProps>;
+    export const IconClipBoard: React.FC<IconProps>;
+    export const IconClock: React.FC<IconProps>;
+    export const IconCreditCard: React.FC<IconProps>;
+    export const IconMap: React.FC<IconProps>;
 
     export const Spinner: React.FC<SpinnerProps>;
 
