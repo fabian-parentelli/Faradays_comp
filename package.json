@@ -1,6 +1,6 @@
 {
     "name": "faradays_comp",
-    "version": "2.0.5",
+    "version": "2.0.7",
     "description": "",
     "main": "index.jsx",
     "types": "index.d.ts",

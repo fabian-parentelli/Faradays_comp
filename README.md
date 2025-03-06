@@ -1,6 +1,6 @@
 # Faradays Components
 
-**Versión:** 2.0.5
+**Versión:** 2.0.7
 
 ## Spinner
 
@@ -35,7 +35,7 @@ export default app;
 
 ## Icons
 
-**Versión:** 0.0.3
+**Versión:** 0.0.4
 
 
 El componente `Icon....` muestra un ícono que se puede personalizar en color, tamaño y agregar una acción al hacer clic.
@@ -96,7 +96,12 @@ export default app;
     * IconClock
     * IconCreditCard
     * IconMap
-
+    * IconFacebook
+    * IconX
+    * IconYoutube
+    * IconLinkedin
+    * IconInstagram
+    * IconNpm
 
 
 ---
